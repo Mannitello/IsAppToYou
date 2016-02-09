@@ -85,3 +85,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS =(BASE_DIR + '/isapptoyou/blog/static/blog/',)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
