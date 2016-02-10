@@ -1,11 +1,24 @@
-body {
-    background-color: lightredgrey;
+
+.title {
+    background-color: #0E7699;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
 }
 
-h2 {
-    color: blue;
+.title h1{
+    font-family: 'Lobster';
+    color: #FFFFFF;
+}
+
+.title, .content {
+    padding-left: 15px;
+}
+
+.date {
+    color: #0E7699;
 }
 
 p {
-    color:green;
+    color:black;
 }
+

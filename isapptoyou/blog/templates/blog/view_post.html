@@ -1,7 +1,18 @@
 {% extends 'base.html' %} 
-{% block head_title %}{{ post.title }}{% endblock %}
-{% block title %}{{ post.title }}{% endblock %}
-
-{% block content %}
-    {{ post.body }}
+{% load staticfiles %}
+{% block head_title %}
+		{{ post.title }}
 {% endblock %}
+
+	{% block title %}
+       			<h1>{{ post.title }}</h1>
+ 	{% endblock %}		
+
+	{% block content %}
+		<div class="date">
+			<p> published: {{ post.posted }}</p>
+		</div>
+		<p>{{ post.body|linebreaks }}</p>
+	
+	{% endblock %}
+</div>

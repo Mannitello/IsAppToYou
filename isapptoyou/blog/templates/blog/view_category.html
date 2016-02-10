@@ -1,6 +1,8 @@
 {% extends 'base.html' %} 
+{% load staticfiles %}
+
 {% block head_title %}Viewing category {{ category.title }}{% endblock %}
-{% block title %}{{ category.title }}{% endblock %}
+{% block title %}<h1>{{ category.title }}</h1>{% endblock %}
 
 {% block content %}
     {% if posts %}

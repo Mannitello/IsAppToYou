@@ -1,11 +1,27 @@
+{% load staticfiles %}
+
 <html>
     <head>
-        <title>{% block head_title %}Welcome to my blog{% endblock %}</title>
+
+    	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}" />
+    	<!-- Using bootstrap style -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+        <title>{% block head_title %} Welcome to my blog {% endblock %}</title>
+    
     </head>
     <body>
-        <h1>{% block title %}Welcome to my block{% endblock %}</h1>
-        {% block content %}
-
-        {% endblock %}
-    </body>
+			<div class="title">
+				{% block title %}
+        		<h1>Welcome to my blog</h1>
+	        	{% endblock %}
+        	</div>
+    	<div class="content">
+    		{% block content %}
+    		{% endblock %}
+  		</div>
+	</body>
 </html>
