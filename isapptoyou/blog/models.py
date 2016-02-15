@@ -27,3 +27,17 @@ class Category(models.Model):
     @permalink
     def get_absolute_url(self):
         return ('view_blog_category', None, { 'slug': self.slug })
+
+class Goal(models.Model):
+    title = models.CharField(max_length=100)
+    category = models.ManyToManyField('blog.Category')
+    description = models.TextField(null=True)
+    slug = models.SlugField(max_length=100, unique=True)
+
+
+    def __unicode__(self):
+        return '%s' % self.title
+
+    @permalink
+    def get_absolute_url(self):
+        return ('view_blog_goal', None, { 'slug': self.slug })

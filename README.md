@@ -16,9 +16,9 @@ Push to Git
 In a PythonAnywhere Bash console:
 ----------------------------------
 
-* cd my-first-blog
+* cd isapptoyou
 
-* source myvenv/bin/activate
+* source env/bin/activate
 
 * git pull
 

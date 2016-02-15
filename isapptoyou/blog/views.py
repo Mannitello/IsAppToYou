@@ -6,14 +6,15 @@ from django.utils import timezone
 from django.template import RequestContext
 
 
-from .forms import AddForm
-from .models import Blog
+from .forms import AddBlogForm, AddGoalForm
+from .models import Blog, Goal
 # Create your views here.
 
 def index(request):
     return render_to_response('index.html', {
         'categories': Category.objects.all(),
-        'posts': Blog.objects.all()
+        'posts': Blog.objects.all(),
+        'goals': Goal.objects.all()
     })
 
 def view_post(request, slug):   
@@ -28,10 +29,14 @@ def view_category(request, slug):
         'posts': Blog.objects.filter(category=category)
     })
 
+def view_goal(request, slug):   
+    return render_to_response('view_goal.html', {
+        'goal': get_object_or_404(Goal, slug=slug)
+    })
 
 def post_new(request):
     if request.method == 'POST':
-        form = AddForm(request.POST)
+        form = AddBlogForm(request.POST)
         if form.is_valid():
             #post = form.save(commit=False)
             form.author = request.user
@@ -39,6 +44,32 @@ def post_new(request):
             post = form.save()
             return redirect('isapptoyou.blog.views.index')
     else:
-        form = AddForm()
+        form = AddBlogForm()
 
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/edit_post.html', {'form': form})
+
+def edit_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    if request.method == "POST":
+        form = AddBlogForm(request.POST, instance=post)
+        if form.is_valid():
+            #post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('isapptoyou.blog.views.view_post', pk=post.pk)
+    else:
+        form = AddBlogForm(instance=post)
+    return render(request, 'blog/edit_post.html', {'form': form})
+
+def edit_goal(request):
+    if request.method == 'POST':
+        form = AddGoalForm(request.POST)
+        if form.is_valid():
+            #post = form.save(commit=False)
+            post = form.save()
+            return redirect('isapptoyou.blog.views.index')
+    else:
+        form = AddGoalForm()
+
+    return render(request, 'blog/edit_goal.html', {'form': form})

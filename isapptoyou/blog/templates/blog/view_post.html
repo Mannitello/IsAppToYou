@@ -12,6 +12,7 @@
 		<div class="date">
 			<p> published: {{ post.posted }}</p>
 		</div>
+		<a class="btn btn-default" href="{% url 'edit_post' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 		<p>{{ post.body|linebreaks }}</p>
 	
 	{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% load staticfiles %}
+{% block head_title %}
+		{{ goal.title }}
+{% endblock %}
+
+	{% block title %}
+       			<h1>{{ goal.title }}</h1>
+ 	{% endblock %}		
+
+	{% block content %}
+		
+		<p>{{ goal.description|linebreaks }}</p>
+	
+	{% endblock %}
