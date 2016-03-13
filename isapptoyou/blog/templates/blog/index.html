@@ -2,10 +2,14 @@
 
 {% load staticfiles %}
 
+{% load static %}
 
 {% block content %}
+
+
+<!-- Fixed navbar -->
         <nav class="navbar-custom">
-            <div class="container">
+            <div class="navbar-container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -18,42 +22,43 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav" role="navigation">
-        
+                <li><a href="#section1">Home</a></li>
+                <li><a href="#section2">What's about</a></li>
                 <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
+                <a href="#section3" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     {% if categories %}
                         {% for category in categories %}
                             <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
                         {% endfor %} 
                     {% else %}
-                        <li><a href="#"> </a></li>
+                        <li><a href="#section3"> </a></li>
                     {% endif %}
                 </ul>
                 </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
+          <a href="#section4" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Posts <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 {% if posts %}
                     {% for post in posts %}
                         <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
                     {% endfor %} 
                 {% else %}
-                    <li><a href="#"> </a></li>
+                    <li><a href="#section4"> </a></li>
                 {% endif %}
             </ul> 
         </li> 
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Goals <span class="caret"></span></a>
+          <a href="#section5" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Goals <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 {% if goals %}
                     {% for goal in goals %}
                         <li><a href="{{ goal.get_absolute_url }}">{{ goal.title }}</a></li>
                     {% endfor %} 
                 {% else %}
-                    <li><a href="#"> </a></li>
+                    <li><a href="#section5"> </a></li>
                 {% endif %}
             </ul> 
         </li>  
@@ -61,6 +66,189 @@
         </div>
      </div>
 </nav>
+
+
+<header class="masthead">
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-interval="false"> 
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="container">
+            <div id="big-size">
+              <img src="{% static 'blog/images/test1.jpg' %}" />
+            </div>
+            <div id="small-size">
+              <img id="small_picture1" src="{% static 'blog/images/test2.jpg' %}" />
+              <img id="small_picture2" src="{% static 'blog/images/test3.jpg' %}" />
+            </div>
+            <div class="carousel-caption">
+              <h2>Every change requires action. <br> 
+                  Get a chance to improve your life and the one of the people around you</h2>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+          <img src="{% static 'blog/images/test2.jpg' %}" />
+            <div class="carousel-caption">
+              <h2>The all world is in your hand. 
+                <br> Make it a wonderful place to live in.</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+          <img src="{% static 'blog/images/test3.jpg' %}" />
+
+          <div class="carousel-caption">
+            <h2>Happiness is reachable for everyone. <br>
+              You only need to see where it is in your life</h2>
+          </div>
+          </div>
+        </div>
+      </div><!-- /.carousel-inner -->
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>  
+    </div>
+    <!-- /.carousel -->
+  
+</header>
+
+
+
+
+<!-- Begin page content -->
+
+<div class="divider" id="section1">
+  
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="page-header text-center">
+      <h1>It's time to look around</h1>
+    </div>
+    </div>
+      <p class="lead text-center"> 
+        Get the chance to give a contibute, live your life the way you want.
+      </p> 
+    <hr>
+    
+    <div class="divider"></div>
+</div>
+</div>
+
+
+    
+<div class="divider"></div>
+  
+<section class="bg-1">
+  <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+</section>
+  
+<div class="divider" id="section2"></div>
+   
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h1>What's about</h1>
+      
+      <hr>
+     
+      <p>
+      You can't change the world, nobody can, but you can change your reality.
+      </p> 
+      <p>
+      Living a better life is up to you, make it hapen
+      </p> 
+      
+      <hr>
+      
+      <div class="divider"></div>
+      
+    </div><!--/col-->
+  </div>
+
+<div class="divider"></div>
+  
+<section class="bg-3">
+  <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+</section>
+
+<div class="divider" id="section3"></div>
+    <div class="bg-3">
+        <div class="col-sm-4 col-xs-6">
+            <h1>Section 3 </h1>
+      
+            <hr>
+     
+            <p>
+            Section 3 
+            </p> 
+            <p>
+            Test for section 3
+            </p> 
+      
+            <hr>
+        </div><!--/col-->
+    </div><!--/container-->
+
+<section class="bg-4">
+  <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+</section>
+
+<div class="divider" id="section4"></div>
+    <div class="bg-4">
+        <div class="col-sm-4 col-xs-6">
+            <h1>Section 4 </h1>
+      
+            <hr>
+     
+            <p>
+            Section 4 
+            </p> 
+            <p>
+            Test for section 4
+            </p> 
+      
+            <hr>
+        </div><!--/col-->
+    </div><!--/container-->
+
+<section class="bg-5">
+  <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+</section>
+
+<div class="divider" id="section5"></div>
+    <div class="bg-5">
+        <div class="col-sm-4 col-xs-6">
+            <h1>Section 5 </h1>
+      
+            <hr>
+     
+            <p>
+            Section 5
+            </p> 
+            <p>
+            Test for section 5
+            </p> 
+      
+            <hr>
+        </div><!--/col-->
+    </div><!--/container-->
 
 {% endblock %}
 

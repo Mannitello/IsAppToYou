@@ -30,9 +30,10 @@ class Category(models.Model):
 
 class Goal(models.Model):
     title = models.CharField(max_length=100)
-    category = models.ManyToManyField('blog.Category')
     description = models.TextField(null=True)
     slug = models.SlugField(max_length=100, unique=True)
+    category = models.ForeignKey('blog.Category',null=True)
+
 
 
     def __unicode__(self):

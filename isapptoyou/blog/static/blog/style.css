@@ -2,7 +2,7 @@
 .title {
     background-color: #0E7699;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 0px 10px 10px;
 }
 
 .title h1{
@@ -25,6 +25,297 @@
 }
 
 p {
-    color:black;
+    color:white;
+}
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.row {
+  margin-left:0px;
+  margin-right:0px;
+}
+
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  margin-top:50px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+
+/* Since positioning the image, we need to help out the caption */
+#myCarousel .carousel-caption {
+    z-index: 10;
+    position: absolute;
+    text-align: left;
+}
+
+.carousel-caption h2, p {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+/* Declare heights because of positioning of img element */
+#myCarousel  .item {
+  height: 500px;
+  background-color:#FFFFFF;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#myCarousel  .item img {
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+}
+
+#myCarousel .carousel-control.left, #myCarousel .carousel-control.right {
+
+background-image: none 
+}
+
+
+.container > div {
+  float: left;
+}
+
+.container .carousel-caption {
+  text-align: left;
+}
+.container .carousel-caption h2{
+  text-align: left;
+  top:50%;
+}
+
+.container {
+padding-top: 20px;
+}
+
+
+#myCarousel  .item .container #big-size {
+  width: 70%;
+}
+
+#myCarousel  .item .container #small-size {
+  width: 30%;
+}
+
+#myCarousel  .item .container #big_picture {
+    width: 100%;
+    height:100%; 
+}
+
+#myCarousel  .item .container #small_picture1 {
+  width: 100%;
+  height:50%;
+}
+
+#myCarousel  .item .container #small_picture2 {
+  width: 100%;
+  height:50%;
+}
+
+
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer {
+  background-color:#414141;
+}
+
+#footer a {
+  color:#efefef;
+}
+
+header {
+  font-family: 'Droid Sans';
+  font-size: 20px;
+}
+
+
+header .dropdown-menu {
+  top:74px;
+  background: #ffcc33;
+  border-width:0;
+}
+
+header div{
+position:relative;
+top=50%;
+
+}
+
+h1 {
+  font-size:50px;
+}
+
+
+#nav {
+  width: 100%;
+  position:static;
+  top:-32px;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+#footer > .container {
+  
+}
+
+@media (min-width: 767px) {
+  .navbar-nav.nav-justified > li{
+      float:none;
+  }
+}
+  
+.navbar-nav {
+  margin: 1px 1px; 
+}  
+  
+/* customize nav style */
+.navbar-custom {
+    background-color: #2e2e2e;
+    font-weight:700;
+    text-transform:uppercase;
+    border-width:0;
+}
+.navbar-custom  .navbar-nav>li>a {
+    color: #ddd;
+}
+.navbar-custom  .dropdown-menu li>a:hover {
+    color: #eee;
+}
+.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
+    background-color: #000;
+}
+.navbar-custom .navbar-nav>.dropdown>a .caret {
+    border-top-color: #999;
+    border-bottom-color: #999;
+}
+
+.navbar-collapse.in { /*3.0.2 bug workaround*/
+    overflow-y: visible;
+}
+
+.navbar-toggle {
+    outline:0;
+}
+
+.divider {
+    height:50px;
+}
+
+.panel {
+    border-width:0;
+}
+
+@media (max-width: 768px) {
+    header {
+    
+    }
+}
+
+#map-canvas {
+    width: 100%; 
+    height: 300px;
+    margin: 0;
+    padding: 15px;
+}
+
+.scroll-top {
+   position:fixed;
+   bottom:0;
+   right:6%;
+   z-index:100;
+   background: #f2f3f2;
+   font-size:24px;
+   border-top-left-radius:3px;
+   border-top-right-radius:3px;
+}
+.scroll-top a:link,.scroll-top a:visited {
+  color:#222;
+} 
+ 
+
+section {
+  color: #ffffff;
+  min-height: 400px;
+  height: auto !important;
+  height: 100%;
+  padding-top:100px;
+}
+
+.bg-1 {
+    background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-2 {
+    background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-3 {
+    background: url('http://www.bootply.com/assets/example/bg_blueplane.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-4 {
+    padding-top:30px;
+    background-color:#e6e6e6;
+}
+
+.panel .img-responsive {
+    min-height:270px;
+    max-height:270px;
 }
 
